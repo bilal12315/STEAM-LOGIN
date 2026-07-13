@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание аккаунта</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: "Motiva Sans", Sans-serif, Arial, Helvetica;
+        }
+
+        body {
+            background-color: #181a21;
+            color: #b8b6b4;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            width: 100%;
+            background-color: #171a21;
+            padding: 15px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #121418;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: #dcdcdc;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover {
+            color: #fff;
+        }
+
+        .search-bar {
+            display: flex;
+        }
+
+        .search-bar input {
+            background-color: #16202d;
+            border: none;
+            padding: 6px 10px;
+            color: #fff;
+            font-style: italic;
+            width: 250px;
+        }
+
+        .search-bar button {
+            background-color: #21a4f3;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            cursor: pointer;
+        }
+
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 60px;
+            padding: 0 50px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            max-width: 320px;
+        }
+
+        label {
+            display: block;
+            color: #969696;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        input[type="email"], select {
+            width: 100%;
+            background-color: #32353c;
+            border: 1px solid #000;
+            border-radius: 2px;
+            padding: 10px;
+            color: #fff;
+            font-size: 14px;
+            outline: none;
+        }
+
+        input[type="email"]:focus, select:focus {
+            border-color: #66c0f4;
+        }
+
+      
+        .captcha-container {
+            background-color: #22252b;
+            border: 1px solid #3c3f48;
+            border-radius: 3px;
+            padding: 15px;
+            max-width: 320px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .captcha-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .captcha-box {
+            width: 28px;
+            height: 28px;
+            border: 2px solid #54575e;
+            border-radius: 4px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .captcha-text {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .captcha-right {
+            text-align: center;
+            font-size: 8px;
+            color: #a9a9a9;
+        }
+
+        .captcha-logo {
+            width: 24px;
+            height: 24px;
+            background-color: #00b4ad;
+            border-radius: 50%;
+            margin: 0 auto 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+    
+        .agreement-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            max-width: 650px;
+            margin-bottom: 40px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        .agreement-container input {
+            margin-top: 3px;
+            cursor: pointer;
+        }
+
+        .agreement-container a {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        
+        .btn-submit {
+            background: linear-gradient(90deg, #47bfff 0%, #1a4fff 100%);
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            padding: 12px 45px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(90deg, #5cc7ff 0%, #2f60ff 100%);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="nav-links">
+            <a>Просмотр</a>
+            <a>Рекомендации</a>
+            <a>Категории</a>
+            <a>Способы игры</a>
+            <a>Особые разделы</a>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Поиск по магазину">
+            <button>🔍</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Создание аккаунта</h1>
+
+        <form onsubmit="event.preventDefault();">
+            
+            <div class="form-group">
+                <label for="email">Адрес эл. почты</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email-confirm">Подтвердите адрес эл. почты</label>
+                <input type="email" id="email-confirm" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Страна проживания</label>
+                <select id="country">
+                    <option value="KG">Кыргызстан</option>
+                    <option value="RU">Россия</option>
+                    <option value="KZ">Казахстан</option>
+                    <option value="UZ">Узбекистан</option>
+                </select>
+            </div>
+
+          
+
+            
+
+            <button type="submit" class="btn-submit">Продолжить</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
